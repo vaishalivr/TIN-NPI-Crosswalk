@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Display with DataTables</title>
+    <script
+      data-main="scripts/main"
+      src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-group">
+        <label for="tin">TIN</label>
+        <input type="text" id="tin" name="tin" list="tin-options" />
+        <datalist id="tin-options"></datalist>
+      </div>
+      <div class="form-group">
+        <label for="npi">NPI</label>
+        <input type="text" id="npi" name="npi" list="npi-options" />
+        <datalist id="npi-options"></datalist>
+      </div>
+    </div>
+
+    <div class="result-container">
+      <div id="result-tin"></div>
+      <div id="result-npi"></div>
+      <div id="output">
+        <table id="example" class="display">
+          <thead>
+            <tr>
+              <th>TIN</th>
+              <th>NPI</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>
