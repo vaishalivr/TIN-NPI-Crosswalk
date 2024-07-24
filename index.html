@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Data Display with DataTables</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.25/css/dataTables.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.dataTables.min.js"></script>
     <script
       data-main="scripts/main"
       src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"
@@ -28,13 +39,8 @@
       <div id="result-tin"></div>
       <div id="result-npi"></div>
       <div id="output">
-        <table id="example" class="display">
-          <thead>
-            <tr>
-              <th>TIN</th>
-              <th>NPI</th>
-            </tr>
-          </thead>
+        <table id="data-table" class="display">
+          <thead></thead>
           <tbody></tbody>
         </table>
       </div>
