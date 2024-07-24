@@ -2,15 +2,24 @@ define([], function () {
   function displayNPIsbyTIN() {
     document.getElementById("tin").addEventListener("input", function () {
       const tinInput = this.value;
-      const resultNpiDiv = document.getElementById("result-npi");
+      const dataTable = $("#data-table").DataTable();
+      dataTable.clear();
 
       const matchedData = tinNpiData.filter((item) => item.TIN === tinInput);
       if (matchedData.length > 0) {
-        resultNpiDiv.innerHTML = `Corresponding NPIs: <ul>${matchedData
-          .map((item) => `<li>${item.NPI}</li>`)
-          .join("")}</ul>`;
-      } else {
-        resultNpiDiv.textContent = "No corresponding NPIs found";
+        matchedData.forEach((item) => {
+          dataTable.row
+            .add([
+              item["CHAIN NAME"],
+              item["SUP IN CHAIN"],
+              item.TIN,
+              item["TIN NAME"],
+              item.NPI,
+              item["NPI NAME"],
+              item["NPI TYPE"],
+            ])
+            .draw();
+        });
       }
     });
     console.log("display npis by tin");
@@ -19,13 +28,24 @@ define([], function () {
   function displayTINbyNPI() {
     document.getElementById("npi").addEventListener("input", function () {
       const npiInput = this.value;
-      const resultTinDiv = document.getElementById("result-tin");
+      const dataTable = $("#data-table").DataTable();
+      dataTable.clear(); // Clear existing data in the table
 
-      const matchedData = tinNpiData.find((item) => item.NPI === npiInput);
-      if (matchedData) {
-        resultTinDiv.textContent = `Corresponding TIN: ${matchedData.TIN}`;
-      } else {
-        resultTinDiv.textContent = "No corresponding TIN found";
+      const matchedData = tinNpiData.filter((item) => item.NPI === npiInput);
+      if (matchedData.length > 0) {
+        matchedData.forEach((item) => {
+          dataTable.row
+            .add([
+              item["CHAIN NAME"],
+              item["SUP IN CHAIN"],
+              item.TIN,
+              item["TIN NAME"],
+              item.NPI,
+              item["NPI NAME"],
+              item["NPI TYPE"],
+            ])
+            .draw();
+        });
       }
     });
     console.log("display tin by npi");
