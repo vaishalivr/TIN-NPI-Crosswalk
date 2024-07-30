@@ -36,9 +36,9 @@ data = {
 
 df = pd.DataFrame(data)
 
-df.to_csv('tin_npi_dataset.csv', index=False)
+#df.to_csv('tin_npi_dataset.csv', index=False)
 
-df_js = pd.read_csv('tin_npi_dataset.csv')
+#df_js = pd.read_csv('tin_npi_dataset.csv')
 data = df.to_dict(orient='records')
 js_content = f"const tinNpiData = {data};\n"
 
